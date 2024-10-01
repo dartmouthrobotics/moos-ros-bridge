@@ -1,0 +1,12 @@
+<launch>
+
+  <node pkg="moos-ros-bridge" type="Bridge" name="Bridge" 
+        args="$(find moos-ros-bridge)/config/robot_0.xml $(find moos-ros-bridge)/config/bridge_0.moos" 
+        respawn="false" output="screen" />
+
+  <node pkg="moos-ros-bridge" type="twistToMoos" name="twistToMoos" respawn="false" 
+        output="screen">
+        <!-- <remap from="CounterFromROS" to="Counter"/> -->
+  </node>
+  
+</launch>

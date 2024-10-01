@@ -1,0 +1,76 @@
+<moosrosconfig>
+
+  <message>
+    <moosname>CounterFromROS</moosname>
+    <rosname>CounterFromROS</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Int32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+  <message>
+    <moosname>CounterFromMOOS</moosname>
+    <rosname>CounterFromMOOS</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Int32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+
+  <message>
+    <moosname>NAV_X</moosname>
+    <rosname>/robot_4/nav_x</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_Y</moosname>
+    <rosname>/robot_4/nav_y</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_HEADING</moosname>
+    <rosname>/robot_4/nav_heading</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_SPEED</moosname>
+    <rosname>/robot_4/nav_speed</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>DESIRED_HEADING</moosname>
+    <rosname>/robot_4/desired_heading</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+  <message>
+    <moosname>DESIRED_SPEED</moosname>
+    <rosname>/robot_4/desired_speed</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+
+  <message>
+    <moosname>DESIRED_THRUST</moosname>
+    <rosname>/robot_4/desired_thrust</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+</moosrosconfig>

@@ -1,0 +1,28 @@
+<launch>
+
+  <group ns="robot_0">
+  <include file="$(find moos-ros-bridge)/launch/robot_0.launch"/>
+  </group>
+
+  <group ns="robot_1">
+  <include file="$(find moos-ros-bridge)/launch/robot_1.launch"/>
+  </group>
+
+  <group ns="robot_2">
+  <include file="$(find moos-ros-bridge)/launch/robot_2.launch"/>
+  </group>
+
+  <group ns="robot_3">
+  <include file="$(find moos-ros-bridge)/launch/robot_3.launch"/>
+  </group>
+
+  <group ns="robot_4">
+  <include file="$(find moos-ros-bridge)/launch/robot_4.launch"/>
+  </group>
+
+  <group ns="robot_5">
+  <include file="$(find moos-ros-bridge)/launch/robot_5.launch"/>
+  </group>
+
+
+</launch>

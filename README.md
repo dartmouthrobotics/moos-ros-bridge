@@ -108,3 +108,34 @@ message consists of the following members:
 `rostype` - the type of the ros topic
 
 `direction` - the direction of the data over the bridge (either toMOOS or toROS).
+
+## MOA connection
+![image info](./figs/moos-moa-structure.png)
+
+Do the following procedure because it does not work properly if Docker runs first and eats port number.
+
+1. MOOS
+Note that 2, 4, 6 (1,3,5 obstacles) can be launched in the folder m2, m4, m6_berta.
+```
+cd ~/moos-ivp/ivp/missions/m2_berta
+./launch.sh
+```
+2. MOOS-ROS wrapper
+Depending on the number of total robots, 
+```
+roslaunch moos-ros-bridge robots_two.launch
+```
+
+3. MOA
+```
+xhost +local:docker
+cd ~/vnc-ros/
+docker-compose up -d
+docker compose exec ros bash
+roslaunch obstacle_avoidance_ros_pkg master_controller.launch obstacle_total:=1 case:=1 open_rviz:=true master_visualization:=true avoidance_algo:=MOA open_stage:=false obstacle_control:=false adaptive_avoidance:=true use_logging:=false moos:=true
+```
+
+* Key components:
+    * MOOS-wrapper only supports Int, Float, String. Hence, we are limited to using custom messages. 
+    * Python publisehd topic was not working properly. Hence, twistToMOOS.cpp handles subscription of python published controlled command and re-publish again in C++. This enables moos wrapper can relay the control signal to MOOS.
+    * MOOS-ROS communication runs in a fixed frequency. 1Hz. Hence, the control signal from MOA and pose input to MOA is not fast -- limitation I can mention.

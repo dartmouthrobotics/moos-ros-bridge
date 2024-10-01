@@ -1,0 +1,11 @@
+<launch>
+
+  <group ns="robot_0">
+  <include file="$(find moos-ros-bridge)/launch/robot_0.launch"/>
+  </group>
+
+  <group ns="robot_1">
+  <include file="$(find moos-ros-bridge)/launch/robot_1.launch"/>
+  </group>
+
+</launch>
